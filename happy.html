@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Zahra 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #6a0dad, #240033);
+      color: white;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav button {
+      margin: 5px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      color: #6a0dad;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    section {
+      display: none;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 10px auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid white;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: white;
+      color: #6a0dad;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    #musicToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      color: #6a0dad;
+      padding: 10px 15px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('message')">Message</button>
+    <button onclick="showSection('gallery')">Gallery</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>🎉 Happy Birthday Zahraeeeem 🎉</h1>
+    <p>Dear Zahra, I hope your day is filled with joy, love, and unforgettable memories.</p>
+  </section>
+
+  <section id="message">
+    <h1>Special Message ❤️</h1>
+    <p>Happy birthday. This day is more than just a date — it is a reminder of how much you mean to me. Your presence makes life brighter and more peaceful, even in ways you may not notice.
+
+I hope this year brings you happiness, success, and moments that make your heart feel light. You deserve all the good things life can offer.</p>
+  </section>
+
+  <section id="gallery">
+    <h1>In a world full of moments,</h1>
+    <p>you are my most beautiful one, Zahraeeeem</p>
+    <div class="gallery">
+      <img src="z1.jpg" alt="cake">
+      <img src="z2.jpg" alt="birthday cake">
+      <img src="z3.jpg" alt="cake with candles">
+    </div>
+  </section>
+
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sweet.mp3" type="audio/mp3">
+  </audio>
+
+  <button id="musicToggle" onclick="toggleMusic()">🎵 Play Music</button>
+
+  <script>
+    // DOM navigation
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Music control
+    const music = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        document.getElementById('musicToggle').innerText = "🎵 Play Music";
+      } else {
+        music.play();
+        document.getElementById('musicToggle').innerText = "⏸️ Stop Music";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    window.onload = function() {
+      music.volume = 0.5;
+    };
+  </script>
+
+</body>
+</html>
