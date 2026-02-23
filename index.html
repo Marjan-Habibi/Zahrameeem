@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday Zahra 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -12,25 +14,25 @@
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 12px;
       text-align: center;
     }
 
     nav button {
-      margin: 5px;
-      padding: 10px 18px;
+      margin: 4px;
+      padding: 10px 16px;
       border: none;
-      border-radius: 20px;
+      border-radius: 18px;
       background: white;
       color: #6a0dad;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     section {
       display: none;
-      padding: 50px 20px;
+      padding: 40px 15px;
       text-align: center;
     }
 
@@ -39,51 +41,62 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 36px;
     }
 
     p {
-      font-size: 20px;
+      font-size: 18px;
       max-width: 800px;
       margin: 10px auto;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
       max-width: 900px;
-      margin: 30px auto;
+      margin: 25px auto;
     }
 
     .gallery img {
       width: 100%;
-      height: 220px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 20px;
-      border: 3px solid white;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      background: white;
-      color: #6a0dad;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 18px;
+      border-radius: 16px;
+      border: 2px solid white;
     }
 
     #musicToggle {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 15px;
+      right: 15px;
       background: white;
       color: #6a0dad;
-      padding: 10px 15px;
+      padding: 10px 14px;
       border-radius: 50px;
       border: none;
       cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* موبایل */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      nav button {
+        font-size: 13px;
+        padding: 8px 14px;
+      }
+
+      .gallery img {
+        height: 150px;
+      }
     }
   </style>
 </head>
@@ -102,14 +115,16 @@
 
   <section id="message">
     <h1>Special Message ❤️</h1>
-    <p>Happy birthday. This day is more than just a date — it is a reminder of how much you mean to me. Your presence makes life brighter and more peaceful, even in ways you may not notice.
-
-I hope this year brings you happiness, success, and moments that make your heart feel light. You deserve all the good things life can offer.</p>
+    <p>
+      Happy birthday. This day is more than just a date — it is a reminder of how much you mean to me.
+      Your presence makes life brighter and more peaceful.
+      I hope this year brings you happiness and success.
+    </p>
   </section>
 
   <section id="gallery">
     <h1>In a world full of moments,</h1>
-    <p>you are my most beautiful one, Zahraeeeem</p>
+    <p>you are my most beautiful one, Zahraeeeem ❤️</p>
     <div class="gallery">
       <img src="z1.jpg" alt="cake">
       <img src="z2.jpg" alt="birthday cake">
@@ -124,13 +139,11 @@ I hope this year brings you happiness, success, and moments that make your heart
   <button id="musicToggle" onclick="toggleMusic()">🎵 Play Music</button>
 
   <script>
-    // DOM navigation
     function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
 
-    // Music control
     const music = document.getElementById('bgMusic');
     let isPlaying = false;
 
